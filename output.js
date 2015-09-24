@@ -3,6 +3,8 @@ var PS = { };
 (function(exports) {
   "use strict";
 
+  // module Mithril
+
   exports.mithrilRequest = function(x) {
     return m.request(x);
   };

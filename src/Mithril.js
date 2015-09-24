@@ -2,10 +2,6 @@
 
 // module Mithril
 
-exports.calculateInterest = function(amount) {
-  return amount * 0.1;
-};
-
 exports.mithrilRequest = function(x) {
   return m.request(x);
 };
