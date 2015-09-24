@@ -25,6 +25,5 @@ post2Dom x = mithrilDomLink { href: x.id } x.title
 view :: forall a. a -> Array MithrilDomNode
 view x = map post2Dom (nullary x "pages")
 
-main = do
-  \_ -> mithrilMount "main" app
+main = \_ -> mithrilMount "main" app
 ```
