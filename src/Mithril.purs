@@ -4,7 +4,7 @@ import Control.Monad.Eff
 
 foreign import data Request :: !
 
-foreign import mithrilRequest :: forall e a. { method :: Prim.String, url :: Prim.String } -> Eff (request :: Request | e) {}
+foreign import mithrilRequest :: forall e. { method :: Prim.String, url :: Prim.String } -> Eff (request :: Request | e) {}
 
 foreign import data MithrilDomNode :: *
 
