@@ -63,15 +63,13 @@ var PS = { };
   var $foreign = PS["Prelude"];
   var Functor = function (map) {
       this.map = map;
-  };                                                                           
-  var unit = {};
+  };
   var map = function (dict) {
       return dict.map;
   };
   var functorArray = new Functor($foreign.arrayMap);
   exports["Functor"] = Functor;
   exports["map"] = map;
-  exports["unit"] = unit;
   exports["functorArray"] = functorArray;;
  
 })(PS["Prelude"] = PS["Prelude"] || {});
@@ -91,20 +89,18 @@ var PS = { };
   };
   var api = "http://jsonplaceholder.typicode.com/posts";
   var app = {
-      page_list: function (_0) {
-          return Mithril.mithrilRequest({
-              method: "GET", 
-              url: api
-          });
-      }, 
-      controller: function (_1) {
+      page_list: Mithril.mithrilRequest({
+          method: "GET", 
+          url: api
+      }), 
+      controller: function (_0) {
           return {
-              pages: app.page_list(Prelude.unit)
+              pages: app.page_list
           };
       }, 
       view: view
   };
-  var main = function (_2) {
+  var main = function (_1) {
       return Mithril.mithrilMount("main")(app);
   };
   exports["main"] = main;

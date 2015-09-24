@@ -8,8 +8,8 @@ import Control.Monad.Eff.Console
 api = "http://jsonplaceholder.typicode.com/posts"
 
 app = {
-  page_list: (\_ -> mithrilRequest { method: "GET", url: api }),
-  controller: (\_ -> { pages: app.page_list unit }),
+  page_list: mithrilRequest { method: "GET", url: api },
+  controller: (\_ -> { pages: app.page_list }),
   view: view
 }
 
