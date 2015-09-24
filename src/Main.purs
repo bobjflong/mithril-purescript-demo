@@ -3,8 +3,6 @@ module Main where
 import Mithril
 import Prelude
 
-import Control.Monad.Eff.Console
-
 api = "http://jsonplaceholder.typicode.com/posts"
 
 app = {
