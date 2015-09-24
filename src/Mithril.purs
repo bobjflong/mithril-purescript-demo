@@ -10,8 +10,8 @@ foreign import data MithrilDomNode :: *
 
 foreign import mithrilDomLink :: { href :: Prim.String } -> Prim.String -> MithrilDomNode
 
-foreign import data MithrilAction :: *
+foreign import data MithrilAction :: !
 
-foreign import mithrilMount :: forall a b c e. Prim.String -> { page_list :: a, controller :: b, view :: c | e} -> MithrilAction
+foreign import mithrilMount :: forall a b c e f. Prim.String -> { page_list :: a, controller :: b, view :: c | e} -> Eff (action :: MithrilAction | f) {}
 
 foreign import nullary :: forall a b. a -> Prim.String -> b
