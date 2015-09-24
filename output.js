@@ -104,16 +104,10 @@ var PS = { };
       }, 
       view: view
   };
-  var controller = function (_2) {
-      return {
-          pages: app.page_list(Prelude.unit)
-      };
-  };
-  var main = function (_3) {
+  var main = function (_2) {
       return Mithril.mithrilMount("main")(app);
   };
   exports["main"] = main;
-  exports["controller"] = controller;
   exports["view"] = view;
   exports["post2Dom"] = post2Dom;
   exports["app"] = app;
