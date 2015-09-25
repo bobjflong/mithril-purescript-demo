@@ -11,12 +11,10 @@ app = {
   view: view
 }
 
-type Post = { title :: Prim.String, id :: Prim.String }
-
 post2Dom :: Post -> MithrilDomNode
 post2Dom x = mithrilDomLink { href: x.id } x.title
 
-view :: forall a. a -> Array MithrilDomNode
-view x = map post2Dom (nullary x "pages")
+view :: PostList -> Array MithrilDomNode
+view x = map post2Dom (pages x)
 
 main = \_ -> mithrilMount "main" app

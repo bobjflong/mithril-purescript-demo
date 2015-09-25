@@ -14,4 +14,8 @@ foreign import data MithrilAction :: !
 
 foreign import mithrilMount :: forall a b c e f. Prim.String -> { page_list :: a, controller :: b, view :: c | e} -> Eff (action :: MithrilAction | f) {}
 
-foreign import nullary :: forall a b. a -> Prim.String -> b
+foreign import data PostList :: *
+
+type Post = { title :: Prim.String, id :: Prim.String }
+
+foreign import pages :: PostList -> Array Post

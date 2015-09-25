@@ -18,8 +18,6 @@ exports.mithrilMount = function(x) {
   };
 };
 
-exports.nullary = function(x) {
-  return function(y) {
-    return x[y]();
-  };
+exports.pages = function(x) {
+  return x.pages();
 };

@@ -21,10 +21,8 @@ var PS = { };
     };
   };
 
-  exports.nullary = function(x) {
-    return function(y) {
-      return x[y]();
-    };
+  exports.pages = function(x) {
+    return x.pages();
   };
  
 })(PS["Mithril"] = PS["Mithril"] || {});
@@ -33,7 +31,7 @@ var PS = { };
   "use strict";
   var $foreign = PS["Mithril"];
   var Control_Monad_Eff = PS["Control.Monad.Eff"];
-  exports["nullary"] = $foreign.nullary;
+  exports["pages"] = $foreign.pages;
   exports["mithrilMount"] = $foreign.mithrilMount;
   exports["mithrilDomLink"] = $foreign.mithrilDomLink;
   exports["mithrilRequest"] = $foreign.mithrilRequest;;
@@ -86,7 +84,7 @@ var PS = { };
       })(x.title);
   };
   var view = function (x) {
-      return Prelude.map(Prelude.functorArray)(post2Dom)(Mithril.nullary(x)("pages"));
+      return Prelude.map(Prelude.functorArray)(post2Dom)(Mithril.pages(x));
   };
   var api = "http://jsonplaceholder.typicode.com/posts";
   var app = {
